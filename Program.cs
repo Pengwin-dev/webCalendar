@@ -17,9 +17,85 @@ namespace webCalendar
     {
         static void Main(string[] args)
         {
+
+            bool showMenu = true;
             webCalendarApp calendarAPP = new webCalendarApp(1);
-            User u = calendarAPP->getUserList()->searchById(123); // return a user.
-            Calendar c= u->getCalendarList()->getCalendarById(333); // return calendar of the previous user.
+            while (showMenu)
+            {
+                showMenu = MainMenu(calendarAPP);
+            }
+
+        }
+
+        private static bool MainMenu(webCalendarApp calendarAPP)
+        {
+
+            Console.Clear();
+            Console.WriteLine("Choose an option:");
+            Console.WriteLine("1) Add New User");
+            Console.WriteLine("2) Show User By Id");
+            Console.WriteLine("3) Exit");
+            Console.Write("\r\nSelect an option: ");
+
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    Console.WriteLine("Get your Id:");
+                    int id = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Get your nickname:");
+                    string nick = Console.ReadLine();
+                    User u1 = new User(id, nick);
+                    calendarAPP.addUser(u1);
+                    return true;
+                case "2":
+                    Console.WriteLine("Get your Id:");
+                    int userID = Convert.ToInt32(Console.ReadLine());
+                    calendarAPP.getUserList().BinarySearch(new User(userID));
+                    return true;
+                case "3":
+                    return false;
+                default:
+                    return true;
+            }
+        }
+
+        private static string CaptureInput()
+        {
+            Console.Write("Enter the string you want to modify: ");
+            return Console.ReadLine();
+        }
+
+        private static void ReverseString()
+        {
+            Console.Clear();
+            Console.WriteLine("Reverse String");
+
+            char[] charArray = CaptureInput().ToCharArray();
+            Array.Reverse(charArray);
+            DisplayResult(String.Concat(charArray));
+        }
+
+        private static void RemoveWhitespace()
+        {
+            Console.Clear();
+            Console.WriteLine("Remove Whitespace");
+
+            DisplayResult(CaptureInput().Replace(" ", ""));
+        }
+
+        private static void DisplayResult(string message)
+        {
+            Console.WriteLine($"\r\nYour modified string is: {message}");
+            Console.Write("\r\nPress Enter to return to Main Menu");
+            Console.ReadLine();
+        }
+
+
+            
+            // return a user.
+            User u = calendarAPP
+                
+        Calendar c= u->getCalendarList()->getCalendarById(333); // return calendar of the previous user.
             
 
             Collectio<Reminder>
