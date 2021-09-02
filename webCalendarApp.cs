@@ -13,6 +13,8 @@ namespace webCalendar
         public webCalendarApp(int id)
         {
             Id = id;
+            userList = new List<User>();
+            calendarList = new List<Calendar>();
         }
 
         public void addUser(User u)
