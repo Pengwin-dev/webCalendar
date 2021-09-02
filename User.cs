@@ -21,7 +21,7 @@ namespace webCalendar
         }
         public string print()
         {
-            return "str";
+            return "User: " + nickName + " id: " + Id ;
         }
 
         

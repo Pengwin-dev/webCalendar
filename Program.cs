@@ -50,8 +50,13 @@ namespace webCalendar
                 case "2":
                     Console.WriteLine("Get your Id:");
                     int userID = Convert.ToInt32(Console.ReadLine());
-                    calendarAPP.getUserList().BinarySearch(new User(userID));
-                    return true;
+                    Console.WriteLine("\nContains: Part with Id=1734: {0}",
+                    getUserList().Contains(new User(userID));
+
+                    // Find items where name contains "seat".
+                    Console.WriteLine("\nFind: Part where name contains \"seat\": {0}",
+                        parts.Find(x => x.PartName.Contains("seat")));
+
                 case "3":
                     return false;
                 default:
@@ -93,7 +98,7 @@ namespace webCalendar
 
             
             // return a user.
-            User u = calendarAPP
+        /*    User u = calendarAPP
                 
         Calendar c= u->getCalendarList()->getCalendarById(333); // return calendar of the previous user.
             
@@ -106,7 +111,7 @@ namespace webCalendar
             c->getReminders(DateTime d, string * tags[], int priority); //Filter by that 3 categories.
             
             c->
-
+        */
         }
     }
-}
+
