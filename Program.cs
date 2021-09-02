@@ -1,5 +1,6 @@
 ﻿using System;
-
+using System.Linq;
+using System.Collections;
 /* must use:
 Delegates and lambdas
 Generics
@@ -47,15 +48,13 @@ namespace webCalendar
                     User u1 = new User(id, nick);
                     calendarAPP.addUser(u1);
                     return true;
+                    
                 case "2":
-                    Console.WriteLine("Get your Id:");
+                    Console.WriteLine("Get the Id that you are looking for:");
                     int userID = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("\nContains: Part with Id=1734: {0}",
-                    getUserList().Contains(new User(userID));
-
-                    // Find items where name contains "seat".
-                    Console.WriteLine("\nFind: Part where name contains \"seat\": {0}",
-                        parts.Find(x => x.PartName.Contains("seat")));
+                    User found =calendarAPP.getUserList().Find(x => x.Id == userID);
+                    found.print();
+                    return true;
 
                 case "3":
                     return false;

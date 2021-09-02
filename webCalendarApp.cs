@@ -17,8 +17,9 @@ namespace webCalendar
 
         public void addUser(User u)
         {
-            userList.Add(u);
+             userList.Add(u);
         }
+
         public void addCalendar(Calendar c)
         {
             calendarList.Add(c);
