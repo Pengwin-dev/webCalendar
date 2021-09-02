@@ -15,6 +15,15 @@ namespace webCalendar
             Id = id;
         }
 
+        public void addUser(User u)
+        {
+            userList.Add(u);
+        }
+        public void addCalendar(Calendar c)
+        {
+            calendarList.Add(c);
+        }
+
         public List<User> getUserList()
         {
             return userList;
