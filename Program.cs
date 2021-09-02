@@ -11,7 +11,7 @@ namespace webCalendar
             Calendar c= u->getCalendarList()->getCalendarById(333); // return calendar of the previous user.
             c->printReminders(DateTime d); //show some  reminders of the previous calendar.
             c->printReminders(string* tags[]) //show some reminders by a given tag.
-
+            c->
 
         }
     }
