@@ -35,7 +35,7 @@ namespace webCalendar
             Console.WriteLine("Choose an option:");
             Console.WriteLine("1) Add New User");
             Console.WriteLine("2) Show User By Id");
-            Console.WriteLine("3) Exit");
+            Console.WriteLine("3) Create New Calendar on a User");
             Console.Write("\r\nSelect an option: ");
 
             switch (Console.ReadLine())
@@ -53,10 +53,17 @@ namespace webCalendar
                     Console.WriteLine("Get the Id that you are looking for:");
                     int userID = Convert.ToInt32(Console.ReadLine());
                     User found =calendarAPP.getUserList().Find(x => x.Id == userID);
-                    found.print();
+                    Console.WriteLine(found.print());
+                    Console.ReadKey();
                     return true;
 
                 case "3":
+                    Console.WriteLine("Select the id:");
+                    int ID = Convert.ToInt32(Console.ReadLine());
+                    User f = calendarAPP.getUserList().Find(x => x.Id == ID);
+                    Calendar c = new Calendar("Calendario 1");
+                    f.AddCalendar(c);
+                    
                     return false;
                 default:
                     return true;
